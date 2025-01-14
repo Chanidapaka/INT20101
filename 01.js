@@ -74,7 +74,7 @@ if (a > b){
 */
 
 // ---Array---//
-let fruits = ['apple', 'banana', 'cherry', 'orange', 'stawberry']
+/*let fruits = ['apple', 'banana', 'cherry', 'orange', 'stawberry']
 console.log(fruits[1])
 
 console.log(fruits.findIndex( fruit => fruit == 'orange'))
@@ -83,3 +83,78 @@ console.log(fruits.length)
 
 fruits.push('mango')
 console.log(fruits)
+
+fruits[0] = 'Durian'
+console.log(frunts)*/
+
+//------------Exam---------------------//
+//01 มีif elese
+function lessThan(num1, num2) {
+          if (num1 + num2 < 100) {
+            result = 'true';
+          } else {
+            result = 'false';
+          }
+          return result;
+        }
+        
+        console.log(lessThan(22,15));
+        console.log(lessThan(83,34));
+console.log(22,15)
+
+//02 if ชื่ออื่นให้Hello ถ้าเป็นชื่อนนี้ให้แสดง My love
+function greeting(name) {
+          if(name == "Mubashir") {
+                      return "Hello, my Love!";
+          }else{
+    return "Hello,Matt!";
+  }
+}
+
+console.log(greeting("Matt"));
+console.log(greeting("Mubashir"));
+
+//03
+function calculateFuel (distance){
+          if (distance * 10 <= 100) {
+            result =  100
+          } else {
+            result = distance * 10
+          }
+          return result
+        }
+        console.log(calculateFuel(15))
+        console.log(calculateFuel(23.5))
+        console.log(calculateFuel(3))
+
+//04
+let arr = [1,2,3,4]
+
+function revierse (var_arr){
+  for(let i=var_arr.length-1; i>=0; i--){
+    console.log(var_arr[i])
+  }
+}
+
+revierse(arr)
+
+let arr1 = [9,9,2,3,4]
+
+function revierse1 (var_arr1){
+  for(let i=var_arr1.length-1; i>=0; i--){
+    console.log(var_arr1[i])
+  }
+}
+
+revierse1(arr1)
+
+
+let arr2 = ['[]']
+
+function revierse2 (var_arr2){
+  for(let i=var_arr2.length-1; i>=0; i--){
+    console.log(var_arr2[i])
+  }
+}
+
+revierse1(arr2)
