@@ -8,20 +8,32 @@
 
  */
 
-function reverseString(str) {
-          let  reverse = '' 
-          
-}
+// function reverseString(str) {
+//           let  reverse = '' 
 
-//Problem 02
-//Example:
+          
+          
+// }
+
+//Problem 02 Write a function to return an array that is rotated to the left 1 position
+//Example: rotateLeft([3,5,7,9]) -->  [5,7,9,3]
 
 /*แนวคิด อ่านตัวแรกมาเก็บไว้ แล้วshift และ put เข้าใหม่
   */
- let fruits = ['Apple', 'Banana', 'Cherry', 'Orange']
- //fruits.shift() //ลบตัวแรก
- fruits.splice(0,1) 
- console.log(fruits)
+function rotateArr(arr) {
+          if (arr.length <= 1) {
+                    return arr;
+                }
+  
+                let elem1 = arr.shift();
+                arr.push(elem1);
+            
+                return arr;
+            }
+            let arr1 = [3,5,7,9];
+            
+            
+            console.log(rotateArr(arr1));
 
  //Problem 03
  //Example:
@@ -48,7 +60,11 @@ function reverseString(str) {
 //Problem 06
  //Example:
 
-/*แนวคิด  
+/*แนวคิด minus คือการเอา a - b เอาแต่a ไม่เอา b 
+เอาArray มาเปรียบเทียบกัน ตัวไหนไม่อยู่ในb ไม่เอา
+ใช้loop ในarray a และ if เพื่อเช็คว่าArray b อีกตัวนึงนั้นตรงกับArray a ไหม
+อันไหนตรงก็สร้าง array ใหม่ และเอาไปเก็บไว้ในนั้น
+.include
 */
 
 
