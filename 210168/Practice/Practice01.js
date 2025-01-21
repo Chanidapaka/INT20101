@@ -5,15 +5,16 @@
 ใช้การวน loop เริ่มจากตัวอักษรตัวสุดท้าย str.length - 1) แล้ววนไปจนถึงตัวแรก (i >= 0)
 ในแต่ละรอบของลูป ให้เพิ่มตัวอักษร (str[i]) เข้าไปในตัวแปร reverse
 หลังจากลูปเสร็จ ให้คืนค่าสตริงที่กลับลำดับแล้วออกจากฟังก์ชัน*/
-// function reverseString(str) {
-//           let reverse = ''            // สร้างตัวแปรสำหรับเก็บสตริงที่กลับลำดับ
-//           for (let i = str.length - 1; i >= 0; i--) { // วนลูปจากตัวอักษรตัวสุดท้ายไปหาตัวแรก
-//               reverse += str[i]     // เพิ่มตัวอักษรแต่ละตัวเข้าไปในตัวแปร reverse
-//           }
-//           return reverse     // คืนค่าสตริงที่กลับลำดับแล้ว
-//       }
+
+function reverseString(str) {
+          let reverse = ''            // สร้างตัวแปรสำหรับเก็บสตริงที่กลับลำดับ
+          for (let i = str.length - 1; i >= 0; i--) { // วนลูปจากตัวอักษรตัวสุดท้ายไปหาตัวแรก
+              reverse += str[i]     // เพิ่มตัวอักษรแต่ละตัวเข้าไปในตัวแปร reverse
+          }
+          return reverse     // คืนค่าสตริงที่กลับลำดับแล้ว
+      }
       
-//       console.log(reverseString("JavaScript")) 
+      console.log(reverseString("JavaScript")) 
       
 
 //Problem 02 Write a function to return an array that is rotated to the left 1 position
@@ -23,19 +24,19 @@
 ใช้ shift() เพื่อดึงค่าตัวแรกของอาร์เรย์ออก และเก็บค่าไว้ในตัวแปร elem1
 ช้ push() เพื่อเพิ่มค่าที่เก็บไว้ (elem1) เข้าไปในตำแหน่งท้ายของอาร์เรย์
 //   */
-// function rotateArr(arr) {
-//           if (arr.length <= 1) { // ตรวจสอบว่าถ้าอาร์เรย์มีความยาวน้อยกว่าหรือเท่ากับ 1 ให้คืนค่าอาร์เรย์เดิม
-//               return arr;
-//           }
+function rotateArr(arr) {
+          if (arr.length <= 1) { // ตรวจสอบว่าถ้าอาร์เรย์มีความยาวน้อยกว่าหรือเท่ากับ 1 ให้คืนค่าอาร์เรย์เดิม
+              return arr;
+          }
       
-//           let elem1 = arr.shift(); // นำค่าตัวแรกของอาร์เรย์ออก และเก็บไว้ในตัวแปร elem1
-//           arr.push(elem1); // เพิ่มค่าที่นำออกไปไว้ที่ตำแหน่งท้ายของอาร์เรย์
+          let elem1 = arr.shift(); // นำค่าตัวแรกของอาร์เรย์ออก และเก็บไว้ในตัวแปร elem1
+          arr.push(elem1); // เพิ่มค่าที่นำออกไปไว้ที่ตำแหน่งท้ายของอาร์เรย์
       
-//           return arr; // คืนค่าอาร์เรย์ที่ถูกหมุนแล้ว
-//       }
+          return arr; // คืนค่าอาร์เรย์ที่ถูกหมุนแล้ว
+      }
       
-//       let arr1 = [3, 5, 7, 9];
-//       console.log(rotateArr(arr1)) // ผลลัพธ์: [5, 7, 9, 3]
+      let arr1 = [3, 5, 7, 9];
+      console.log(rotateArr(arr1)) // ผลลัพธ์: [5, 7, 9, 3]
       
 
  //Problem 03 Write a function to return an array that is rotated to the left n position
@@ -44,21 +45,21 @@
 /*แนวคิด  อ่านตัวแรกมาเก็บไว้ แล้วshift และ put เข้าใหม่ เขียนfor loop
   */
 
-// function rotateLeft(arr, n) {
-//           if (arr.length <= 1 || n <= 0) {
-//               return arr; // ถ้าอาร์เรย์มีขนาดเล็กกว่า 2 หรือ n <= 0 ให้คืนค่าอาร์เรย์เดิม
-//           }
+function rotateLeft(arr, n) {
+          if (arr.length <= 1 || n <= 0) {
+              return arr; // ถ้าอาร์เรย์มีขนาดเล็กกว่า 2 หรือ n <= 0 ให้คืนค่าอาร์เรย์เดิม
+          }
       
-//           n = n % arr.length // จัดการกรณีที่ n มากกว่าความยาวของอาร์เรย์
-//           for (let i = 0; i < n; i++) {
-//               let firstElement = arr.shift() // ดึงตัวแรกของอาร์เรย์ออก
-//               arr.push(firstElement) // เพิ่มตัวแรกที่ดึงออกไปไว้ที่ท้ายอาร์เรย์
-//           }
+          n = n % arr.length // จัดการกรณีที่ n มากกว่าความยาวของอาร์เรย์
+          for (let i = 0; i < n; i++) {
+              let firstElement = arr.shift() // ดึงตัวแรกของอาร์เรย์ออก
+              arr.push(firstElement) // เพิ่มตัวแรกที่ดึงออกไปไว้ที่ท้ายอาร์เรย์
+          }
       
-//           return arr // คืนค่าอาร์เรย์ที่ถูกหมุนแล้ว
-//       }
+          return arr // คืนค่าอาร์เรย์ที่ถูกหมุนแล้ว
+      }
 
-//       console.log(rotateLeft([3, 5, 7, 9], 2)); // ผลลัพธ์: [7, 9, 3, 5]
+      console.log(rotateLeft([3, 5, 7, 9], 2)); // ผลลัพธ์: [7, 9, 3, 5]
       
       
 
@@ -68,23 +69,23 @@
 /*แนวคิด  merge คือ รวม2 Array และผลลัพธ์เป็น Array ใหม่ เป็น for loop 2 ครั้ง 
 อ่าน Array = [1,2,3] และเอาค่านั้นมาput ลงArray อีกตัวนึง
 */
-// function mergeArrays(arr1, arr2) {
-//           let mergedArray = [] // สร้างอาร์เรย์ใหม่เพื่อเก็บผลลัพธ์
+function mergeArrays(arr1, arr2) {
+          let mergedArray = [] // สร้างอาร์เรย์ใหม่เพื่อเก็บผลลัพธ์
       
-//           // เพิ่มค่าจาก arr1 ลงใน mergedArray
-//           for (let i = 0; i < arr1.length; i++) {
-//               mergedArray.push(arr1[i])
-//           }
+          // เพิ่มค่าจาก arr1 ลงใน mergedArray
+          for (let i = 0; i < arr1.length; i++) {
+              mergedArray.push(arr1[i])
+          }
       
-//           // เพิ่มค่าจาก arr2 ลงใน mergedArray
-//           for (let i = 0; i < arr2.length; i++) {
-//               mergedArray.push(arr2[i])
-//           }
+          // เพิ่มค่าจาก arr2 ลงใน mergedArray
+          for (let i = 0; i < arr2.length; i++) {
+              mergedArray.push(arr2[i])
+          }
       
-//           return mergedArray // คืนค่าอาร์เรย์ใหม่ที่รวมกันแล้ว
-//       }
+          return mergedArray // คืนค่าอาร์เรย์ใหม่ที่รวมกันแล้ว
+      }
       
-//       console.log(mergeArrays([1, 2, 3], [4, 5, 6, 7])) // ผลลัพธ์: [1, 2, 3, 4, 5, 6, 7]
+      console.log(mergeArrays([1, 2, 3], [4, 5, 6, 7])) // ผลลัพธ์: [1, 2, 3, 4, 5, 6, 7]
       
 
 //Problem 05 Write a function that will merge two arrays by alternating elements 
@@ -98,25 +99,25 @@
 3.ใช้if เช็คเงื่อนไข 
 */
 
-// function mergeOneByOneArrays(arr1, arr2) {
-//           let mergedArray = []; // สร้างอาร์เรย์ใหม่เพื่อเก็บผลลัพธ์
-//           let maxLength = Math.max(arr1.length, arr2.length); // หาความยาวของอาร์เรย์ที่ยาวที่สุด
+function mergeOneByOneArrays(arr1, arr2) {
+          let mergedArray = []; // สร้างอาร์เรย์ใหม่เพื่อเก็บผลลัพธ์
+          let maxLength = Math.max(arr1.length, arr2.length); // หาความยาวของอาร์เรย์ที่ยาวที่สุด
       
-//           for (let i = 0; i < maxLength; i++) {
-//               // ถ้า arr1 มีค่าในตำแหน่ง i ให้เพิ่มเข้าไปใน mergedArray
-//               if (i < arr1.length) {
-//                   mergedArray.push(arr1[i]);
-//               }
-//               // ถ้า arr2 มีค่าในตำแหน่ง i ให้เพิ่มเข้าไปใน mergedArray
-//               if (i < arr2.length) {
-//                   mergedArray.push(arr2[i]);
-//               }
-//           }
+          for (let i = 0; i < maxLength; i++) {
+              // ถ้า arr1 มีค่าในตำแหน่ง i ให้เพิ่มเข้าไปใน mergedArray
+              if (i < arr1.length) {
+                  mergedArray.push(arr1[i]);
+              }
+              // ถ้า arr2 มีค่าในตำแหน่ง i ให้เพิ่มเข้าไปใน mergedArray
+              if (i < arr2.length) {
+                  mergedArray.push(arr2[i]);
+              }
+          }
       
-//           return mergedArray; // คืนค่าอาร์เรย์ที่รวมกันแบบสลับ
-//       }
+          return mergedArray; // คืนค่าอาร์เรย์ที่รวมกันแบบสลับ
+      }
       
-//       console.log(mergeOneByOneArrays([1, 2, 3], [4, 5, 6, 7])); // ผลลัพธ์: [1, 4, 2, 5, 3, 6, 7]
+      console.log(mergeOneByOneArrays([1, 2, 3], [4, 5, 6, 7])); // ผลลัพธ์: [1, 4, 2, 5, 3, 6, 7]
 
       
 
