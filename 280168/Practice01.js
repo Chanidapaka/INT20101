@@ -1,4 +1,11 @@
 //01 Write a function to reverse a number
+//แนวคิด Number to String
+let strnum = String(123)
+console.log(strnum.length) //output:3
+let num = Number(strnum)
+console.log(num)   //output:123
+console.log(typeof num)  //output:number
+
 // วิธีที่1 
 function reverse(num) {
           let reverseNum = [];
@@ -34,12 +41,6 @@ function reverse(num) {
 
       
 
-//Number to String
-let strnum = String(123)
-console.log(strnum.length) //output:3
-let num = Number(strnum)
-console.log(num)   //output:123
-console.log(typeof num)  //output:number
 
 
       
