@@ -17,5 +17,5 @@ console.log(person2)      //output:undefined
 //Template Literals
 let address = `126 Pracha Utid Rd.
 Thungkru Bangmod
-Bakok`
+Bangkok`
 console.log(address)
