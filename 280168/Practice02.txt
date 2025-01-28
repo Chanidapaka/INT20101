@@ -1,0 +1,115 @@
+----------- Conditional Problem ----------
+01.Create a function that takes an array of positive and negative numbers. 
+Return an array where the first element is the count of positive numbers 
+and the second element is the sum of negative numbers.
+          •If given an empty array, return an empty array: [ ]
+          •0 is not positive
+Example: countPosSumNeg([1,2,3,4,5,-6,-7,-8]) --> [5,-21]
+
+เราต้องการรับArray ที่มีตัวเลขบวกและลบเข้ามา retrun Array ใหม่ที่มี จำนวนตัวเลขบวก (ไม่นับ 0) และ ผลรวมของตัวเลขลบ หากArrayว่าง [ ] ให้คืนค่าเป็นArrayว่าง
+ขั้นตอนการทำ
+          1.ตรวจสอบว่าอาร์เรย์ว่างหรือไม่
+                    ถ้าอาร์เรย์ว่าง ([]) ให้คืนค่าอาร์เรย์ว่าง ([]) ทันที
+          2.วนลูปตรวจสอบตัวเลขในอาร์เรย์
+                    oถ้าตัวเลข > 0: ให้นับจำนวน (เพิ่มค่าตัวนับ)
+                    oถ้าตัวเลข < 0: ให้นำไปบวกผลรวมของตัวเลขลบ
+          3.คืนค่าเป็นอาร์เรย์
+                    o[จำนวนตัวเลขบวก, ผลรวมตัวเลขลบ]
+
+02.Create a function that takes a string and censors word over four characters with *.
+          •Don’t censor words with exactly four characters.
+          •If all words have four characters or less, return the original string.
+          •The amount of * is the same as the length of word.
+Example:  censorWords("The code is fourty")  "The code is ******"
+
+เราต้องการเขียนฟังก์ชันที่:
+          1.รับข้อความ (String) และตรวจสอบแต่ละคำในข้อความ
+          2.หากคำใดมีความยาวมากกว่า 4 ตัวอักษร ให้แทนคำเหล่านั้นด้วย * ที่มีจำนวนเท่ากับความยาวของคำ
+          3.หากคำทั้งหมดมีความยาวไม่เกิน 4 ตัวอักษร ให้คืนค่าข้อความเดิม
+          4.ใช้ .split() เพื่อแยกคำ และ .join() เพื่อรวมคำกลับเป็นข้อความ
+ขั้นตอนการทำ
+          1.แยกคำในข้อความ
+                    ใช้ .split(" ") เพื่อแยกคำโดยใช้ช่องว่างเป็นตัวแบ่ง
+          2.ตรวจสอบความยาวของคำแต่ละคำ
+                    ใช้ for หรือ map เพื่อตรวจสอบความยาวของคำ:
+                              oถ้าความยาว > 4 ให้แทนคำด้วย * ตามความยาวของคำ
+                              oถ้าความยาว ≤ 4 ให้เก็บคำเดิมไว้
+          3.รวมคำกลับเป็นข้อความ
+                    ใช้ .join(" ") เพื่อรวมคำกลับมาเป็นข้อความเดียว
+          4.คืนค่าข้อความที่ปรับแต่งแล้ว
+
+
+03.Create a function that takes the month and year (as integers) and 
+returns the number of days in that month. [Don’t forget about the leap years]
+Example:  daysInMonthOfYear(2, 2018) --> 28 
+	daysInMonthOfYear(4, 2025) --> 30
+
+เราต้องการเขียนฟังก์ชันที่:
+          1.รับเดือน (month) และปี (year) เป็นตัวเลข
+          2.คืนค่าจำนวนวันในเดือนนั้น โดย:
+                    oเดือนทั่วไป (ยกเว้นกุมภาพันธ์) มีจำนวนวันตายตัว
+                    oเดือนกุมภาพันธ์ต้องตรวจสอบว่าเป็นปีอธิกสุรทิน (leap year) หรือไม่
+          3.ใช้ loop และ if เพื่อคำนวณ
+ขั้นตอนการทำ
+          1.ตรวจสอบว่าเป็นเดือนกุมภาพันธ์หรือไม่
+                    oถ้าใช่ (month === 2) ให้ตรวจสอบปีอธิกสุรทิน:
+                              --> ปีอธิกสุรทิน: ปีที่หาร 4 ลงตัว แต่ถ้าหาร 100 ลงตัว ต้องหาร 400 ลงตัวด้วย
+                              --> ถ้าเป็นปีอธิกสุรทิน ให้คืนค่า 29 วัน มิฉะนั้นคืนค่า 28 วัน
+          2.สำหรับเดือนอื่น ๆ
+                    oใช้ if หรือ switch เพื่อตรวจสอบเดือนที่มี 30 หรือ 31 วัน
+          3.คืนค่าจำนวนวันในเดือนนั้น
+
+
+04.When creating variables, the variable name must always start with a letter 
+and cannot contain spaces, though numbers and underscores are allowed to be contain in it also.
+Create a function which returns true if a given variable name is valid, otherwise return false.
+Example: validateVarName("result") --> true
+	validateVarName("even number") --> false
+ 	validateVarName("2days") --> false
+
+ฟังก์ชันตรวจสอบว่าชื่อที่ส่งมาถูกต้องตามกฎของการตั้งตัวแปร:
+          1.ต้องขึ้นต้นด้วยตัวอักษร
+          2.ห้ามมีช่องว่าง
+          3.สามารถมีตัวเลขและ _ ได้
+
+
+05.Create a function that returns true if the first array is a subset of the second array. 
+Otherwise, return false.
+Example:  isSubsetArray([1,2],[3,5,9,1]) --> false 
+          isSubsetArray([9,3],[3,5,9,1]) --> true
+
+ฟังก์ชันตรวจสอบว่าอาร์เรย์แรกเป็น subset ของอาร์เรย์ที่สองหรือไม่:
+          1.ใช้ loop ตรวจสอบแต่ละค่าของอาร์เรย์แรกว่ามีอยู่ในอาร์เรย์ที่สองหรือไม่
+          2.ใช้ includes ช่วยในการตรวจสอบ
+
+
+06.Create a function that takes a string as an argument and 
+converts the first character of each word to uppercase. 
+Return the newly formatted string.
+Example: capFirstLetterOfEachWord("This is a title") --> "This Is A Title"
+
+ฟังก์ชันแปลงตัวอักษรตัวแรกของแต่ละคำให้เป็นตัวใหญ่:
+          1.ใช้ split แยกคำ
+          2.ใช้ map แปลงตัวแรกของแต่ละคำให้เป็นตัวใหญ่
+          3.ใช้ join รวมกลับเป็นสตริง
+
+
+07.Create a function that accepts a string as a parameter 
+and finds the longest word within the string.
+Example: longestWord("Web Development Tutorial") --> "Development"
+
+ฟังก์ชันหาคำที่ยาวที่สุดในสตริง:
+          1.ใช้ split แยกคำ
+          2.ใช้ reduce เพื่อหาอันที่ยาวที่สุด
+
+08.Create a function to truncate a string if it is longer the specified number of characters. 
+Truncated strings will end with a translatable ellipsis sequence ("…").
+Example :   truncate_string("We are doing JS string exercies.", 15)    "We are doing JS…"
+
+ฟังก์ชันตัดสตริงให้มีความยาวตามที่กำหนด:
+          1.ถ้าสตริงสั้นกว่าหรือเท่ากับความยาวที่กำหนด ให้คืนค่าตามเดิม
+          2.ถ้ายาวเกิน ให้ตัดและเติม …
+
+
+
+
