@@ -38,6 +38,15 @@ function rotateArr(arr) {
       let arr1 = [3, 5, 7, 9];
       console.log(rotateArr(arr1)) // ผลลัพธ์: [5, 7, 9, 3]
       
+      
+      function rotateArr1(arr2) { 
+        let first = arr2[0]
+        arr2.shift()
+        arr2.push(first)
+        return arr2
+        }
+        Console.log(rotateArr1([3,5,7,9]))
+        
 
  //Problem 03 Write a function to return an array that is rotated to the left n position
  //Example:Example:  rotateLeft([3,5,7,9],2)  [7,9,3,5]
