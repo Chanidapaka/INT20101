@@ -106,15 +106,16 @@ console.log(22,15)
 // and would like to greet him slightly differently. 
 // She added a special case in her function, but she made a mistake.
 function greeting(name) {
-          if(name == "Mubashir") {
-                      return "Hello, my Love!";
-          }else{
-    return "Hello,Matt!";
+  let greet 
+  if (name == "Mubashir") {
+            greet = "Hello, my Love!"
+  }  else {
+            greet  = "Hello, " + name + "!"
   }
+  return greet
 }
-
-console.log(greeting("Matt"));
-console.log(greeting("Mubashir"));
+console.log(greeting("Matt"))     //output: Hello, Matt!
+console.log(greeting("Mubashir"))  //output: Hello, my Love!
 
 //03 A vehicle needs 10 times the amount of fuel than the distance it travels. 
 // However, it must always carry a minimum of 100 fuel before setting off.
@@ -122,7 +123,7 @@ console.log(greeting("Mubashir"));
 // If the calculated fuel is less than 100. The function must return 100 for the minimum fuel required.
 
 function calculateFuel (distance){
-          if (distance * 10 <= 100) {
+          if (distance * 10 < 100) {
             result =  100
           } else {
             result = distance * 10
