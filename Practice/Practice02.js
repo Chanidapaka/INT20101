@@ -149,6 +149,17 @@ console.log("1" + { a:1 }) //"1[object Object]"
 console.log(true + { a:1 }) //"true[object Object]"
 console.log({ a: 1} + 1)   // "[object Object]1"
 
+//Operators
+//--Arithmetic operators (mathematical)
+console.log(10 + 3) //Addition (การบวก)
+console.log(2 - 4) //Subtraction (การลบ)
+console.log(5 * 7) //Multplication (การคูณ)
+console.log(1 ** 2) //Exponentiation (การคูณ2ตัว)
+console.log(2 / 8) //Divisiontion (การการ)
+console.log(2 % 100) //Remainder (การหารเปอร์เซน)
+//console.log(9++) //Increment (การทำบวกไปเรื่อยๆ)
+//console.log(7--) //Decrement (การทำลบไปเรื่อยๆ)
+
 
 
 
