@@ -160,6 +160,15 @@ console.log(2 % 100) //Remainder (การหารเปอร์เซน)
 //console.log(9++) //Increment (การทำบวกไปเรื่อยๆ)
 //console.log(7--) //Decrement (การทำลบไปเรื่อยๆ)
 
+//The assignment operator
+/* x = y 
+   x += y เหมือนกับ x = x + y
+   x -= y เหมือนกับ x = x - y
+   x *= y เหมือนกับ x = x * y
+   x /= y เหมือนกับ x = x / y
+   x %= y เหมือนกับ x = x % y
+    */
+
 
 
 
