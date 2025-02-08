@@ -107,6 +107,47 @@ console.log(last_name) //output: undefined
 let first_namee = null
 console.log(first_namee)  //output: null
 
+//Type Conversion (การแปลงประเภทแบบชัดเจน - Explicit)
+let a = "7"
+let b = 5
+console.log(a + b) //output: 75
+console.log(typeof a + b) //output: string 
+//เพราะมันโดนแปลงค่าอัตโนมัติ(Coercion) ก่อนที่ b จะเอาค่านั้นมา + ได้ทำการแปลงเป็น string ก่อนที่จะเอาค่านั้นมาบวก
+
+// string to int()
+let c = "7"
+let d = 5
+
+//convert c to integer
+c = Number(c)
+console.log(typeof c + d) //output:number
+
+//convert d to string
+d = String(d)
+console.log(d) //output: 5
+console.log(typeof d) //output: string
+
+//convert c to boolean: true
+c = Boolean(c)
+console.log(c) //output true
+
+//convert d to boolean: false
+d = !Boolean(d)
+console.log(d) //output false
+
+//Type Coercion (การแปลงประเภทแบบอัตโนมัติ - Implicit)
+console.log(1 + "1") //output: 11 (การ + กันแบบ string)
+console.log(1 + Number("1")) //output: 2 (การ + กันแบบ number)
+
+//Type coercion rules
+console.log(1 + "1")  //11
+console.log([1 + 2] + "1") //31
+console.log(true + "1") //true1
+
+console.log({a: 1} + "1")  //"[object Object]1"
+console.log("1" + { a:1 }) //"1[object Object]"
+console.log(true + { a:1 }) //"true[object Object]"
+console.log({ a: 1} + 1)   // "[object Object]1"
 
 
 
