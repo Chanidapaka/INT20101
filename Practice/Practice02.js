@@ -161,14 +161,22 @@ console.log(2 % 100) //Remainder (การหารเปอร์เซน)
 //console.log(7--) //Decrement (การทำลบไปเรื่อยๆ)
 
 //The assignment operator
-/* x = y 
-   x += y เหมือนกับ x = x + y
-   x -= y เหมือนกับ x = x - y
-   x *= y เหมือนกับ x = x * y
-   x /= y เหมือนกับ x = x / y
-   x %= y เหมือนกับ x = x % y
-    */
+/* x = y   Assignment
+   x += y เหมือนกับ x = x + y Addition assignment
+   x -= y เหมือนกับ x = x - y Subtraction assignment
+   x *= y เหมือนกับ x = x * y Multiplication assignment
+   x /= y เหมือนกับ x = x / y Division assigment
+   x %= y เหมือนกับ x = x % y Remainder assignment */ 
 
+//The comparison operators
+console.log(9 == "9")   //output:true   //Equal
+console.log(9 != 20)    //output:true   //Not equal
+console.log(5 === "5")  //output:flase  //Strict equal
+console.log(5 !== "5")  //output:true   //Strict nor equal
+console.log(2 > 10)     //output:false  //Greater than
+console.log(2 >= 10)    //output:false  //Greater than or equal
+console.log(2 < 10)     //output:true   //Less than
+console.log(2 <= 10)    //output:true   //Less than or equal
 
 
 
