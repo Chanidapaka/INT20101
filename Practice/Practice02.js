@@ -82,3 +82,33 @@ let namee = "Aom"
 let topic = "JavaScript"
 console.log(`${namee} is learning ${topic} today`)
 
+//--Number มีแค่ Integers(จำนวนเต็ม) and Floats(ทศนิยม)
+let x = 1
+let y = 2
+console.log(x + y) //output: 3
+
+let f = 1.2
+let z = 2.35
+console.log(f + z) //output:3.55
+
+//-- Booleans
+let on = true
+let off = false
+
+//-- Undefined คือยังไม่ได้ Assign ค่าลงไป
+let first_name 
+console.log(first_name) //output: undefined
+
+//or
+let last_name = undefined
+console.log(last_name) //output: undefined
+
+//Null ประกาศว่า เป็นค่า empty or unknown 
+let first_namee = null
+console.log(first_namee)  //output: null
+
+
+
+
+
+
