@@ -54,8 +54,11 @@ function stringToArrayy(str){
     let newWorld = ''
     let arr = []
     for (let i = 0; i < str.length; i++){
-        if (str[i] != ' '&& i != str.length-1 ){
+        if (str[i] != ' '){
             newWorld += str[i]
+            if(i == str.length-1){
+                arr.push(newWorld)
+            }
         } else{
             arr.push(newWorld)
             newWorld = ''
