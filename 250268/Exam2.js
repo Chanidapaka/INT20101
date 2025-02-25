@@ -61,38 +61,32 @@ console.log(notSubsetArray([-1, -2], [1, 2, 3, 4])) // true
 
       
       // 4. Function to find the most frequent number in an array
-      function mostNumberInArray(arr) {
-          let count = {}
+      function mostNumberInArray(arr1) {
+          let newArr = [0, 0, 0, 4, 0, 0]
+
+          for (let i = 0; i < arr1.length; i++) {
+                    newArr[arr1[i]]++ 
+          }
+
+          let max = 0
+          let num = 0
+          let countMax = 0
+          for (let i = 0; i < arr1.length; i++) {
+                   if (max < newArr[i]) {
+                              max = newArr[i]
+                              num = i
+                              countMax = 0
+                   } else if (max == newArr[i]) {
+                              countMax++
+                   }
+          }
           
-          // นับจำนวนครั้งของแต่ละตัวเลข
-          for (let i = 0; i < arr.length; i++) {
-              let num = arr[i];
-              if (count[num] === undefined) {
-                  count[num] = 1;
-              } else {
-                  count[num]++;
-              }
+          if(countMax > 0){
+                    return 'None'
+          }else{
+                    return num
           }
-      
-          let maxFreq = 0;
-          let maxNum = null;
-          let sameFreq = false;
-      
-          // หาค่าที่ซ้ำมากที่สุด
-          for (let num in count) {
-              if (count[num] > maxFreq) {
-                  maxFreq = count[num];
-                  maxNum = Number(num);
-                  sameFreq = false;
-              } else if (count[num] === maxFreq) {
-                  sameFreq = true; // ถ้ามีตัวอื่นที่ซ้ำเท่ากัน
-              }
-          }
-      
-          if (sameFreq) return 'None'; // ถ้ามีมากกว่าหนึ่งตัวที่ซ้ำเท่ากัน
-          return maxNum;
       }
-      
-      console.log(mostNumberInArray([1, 2, 2, 3, 4, 2])); // 2
-      console.log(mostNumberInArray([1, 2, 3, 4, 5])); // 'None'
-      console.log(mostNumberInArray([1, 1, 2, 2, 3, 4, 5])); // 'None'
+      console.log(mostNumberInArray([1, 2, 2, 3, 4, 2])) // 2
+      console.log(mostNumberInArray([1, 2, 3, 4, 5])) // 'None'
+      console.log(mostNumberInArray([1, 1, 2, 2, 3, 4, 5])) // 'None'
