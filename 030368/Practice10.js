@@ -12,10 +12,14 @@ function mean(n) {
       console.log(mean(678)) // 7
       
 // Problem 2: นับจำนวนค่าที่เท่ากัน
-      function equal(a, b, c) {
-          if (a === b && b === c) return 3
-          if (a === b || a === c || b === c) return 2
-          return 0
+function equal(a, b, c) {
+          if (a === b && b === c) {
+              return 3 // All three are equal
+          } else if (a === b || a === c || b === c) {
+              return 2 // Two are equal
+          } else {
+              return 0 // None are equal
+          }
       }
       console.log(equal(3, 4, 3)) // 2
       console.log(equal(1, 1, 1)) // 3
@@ -45,13 +49,13 @@ function mean(n) {
       console.log(toggleCamelAndSnakeCase("helloWorld")); // "hello_world"
       
 // Problem 4: ตรวจสอบตัวประกอบของ 3 หรือ 5 เท่านั้น
-      function only3Or5(n) {
-          while (n % 3 === 0) n /= 3
-          while (n % 5 === 0) n /= 5
-          return n === 1
+function only3Or5(n) {
+          while (n % 3 === 0) n /= 3;
+          while (n % 5 === 0) n /= 5;
+          return n === 1 || (n % 3 === 0 || n % 5 === 0 || n % 3 === 3 || n % 3 === 5 || n % 5 === 3 || n % 5 === 5);
       }
 
-      console.log(only3Or5(14)) // false
+      console.log(only3Or5(15)) // true
       console.log(only3Or5(25)) // true
       console.log(only3Or5(35)) // false
       console.log(only3Or5(7)) // false
